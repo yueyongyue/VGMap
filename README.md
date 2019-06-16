@@ -1,5 +1,5 @@
 # 可视化输出 Golang Map （GoLang 1.11.1）
-## 基于 Golang Map 的实现，为了便于理解，做个 Map 的可视化输出
+## 为了便于理解 Golang Map， 基于 Golang Map 底层的实现，做的 Map 可视化输出
 
 ````
 buckets[0]:
