@@ -66,11 +66,6 @@ func evacuated(b *bmap) bool {
 }
 
 func main() {
-	//defer func() {
-	//	if err := recover(); err != nil {
-	//		fmt.Println(err)
-	//	}
-	//}()
 	mp := make(map[int]int, 0)
 	var choice int
 	for {
@@ -85,7 +80,9 @@ func main() {
 		fmt.Println("    5：退出")
 		fmt.Println("#########################")
 		fmt.Println("请选择(1,2,3,4,5):")
-		fmt.Scanln(&choice)
+		if _, err := fmt.Scanln(&choice); err != nil {
+			fmt.Println("输入的值不正确请重新输入...")
+		}
 		switch choice {
 		case 1:
 			fmt.Println("请输入key:")
@@ -115,9 +112,6 @@ func main() {
 			}
 			vmap(mp)
 		case 3:
-			//if len(mp) == 0 {
-			//	mp = make(map[int]int,0)
-			//}
 			vmap(mp)
 		case 4:
 			for k := range mp {
